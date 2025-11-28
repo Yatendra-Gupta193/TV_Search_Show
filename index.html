@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>TV Show Search</title>
 
     <style>
@@ -11,13 +9,11 @@
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
-
         body {
             background: linear-gradient(135deg, #ffecd2, #fcb69f, #ff9a9e, #fecfef);
             min-height: 100vh;
             padding: 40px;
         }
-
         h1 {
             text-align: center;
             margin-bottom: 25px;
@@ -28,7 +24,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         /* Search Section */
         .search-box {
             display: flex;
@@ -37,7 +32,6 @@
             gap: 12px;
             margin-bottom: 30px;
         }
-
         .search-input {
             width: 50%;
             padding: 14px 20px;
@@ -49,12 +43,10 @@
             box-shadow: 0 0 10px rgba(255, 154, 158, 0.3);
             transition: 0.3s;
         }
-
         .search-input:focus {
             border-color: #5a7bff;
             box-shadow: 0 0 10px rgba(90,123,255,0.3);
         }
-
         .btn {
             padding: 12px 26px;
             border-radius: 30px;
@@ -66,19 +58,16 @@
             box-shadow: 0 4px 15px rgba(90, 123, 255, 0.4);
             transition: 0.3s;
         }
-
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(90, 123, 255, 0.6);
         }
-
         /* Movies Container */
         #movies {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         /* Grid Layout */
         .movie-grid {
             display: grid;
@@ -88,7 +77,6 @@
             padding: 10px 30px;
             margin-top: 15px;
         }
-
         /* Movie Card */
         .movie {
             background: white;
@@ -107,20 +95,17 @@
             cursor: pointer;
             transition: all 0.28s ease;
         }
-
         /* Hover Effect */
         .movie:hover {
             transform: translateY(-6px);
             box-shadow: 0px 8px 22px rgba(0,0,0,0.18);
         }
-
         /* CLICK → Zoom + Lift */
         .movie.active {
             transform: translateY(-12px) scale(1.08);
             border-width: 4px;
             box-shadow: 0px 12px 28px rgba(0,0,0,0.28);
         }
-
         .movie img {
             width: 130px;
             height: 180px;
@@ -128,41 +113,34 @@
             border-radius: 10px;
             margin-bottom: 10px;
         }
-
         .movie h2 {
             font-size: 16px;
             color: #333;
         }
-
         /* No Results */
         .no-results {
             margin-top: 30px;
             text-align: center;
             animation: fadeIn 0.5s ease;
         }
-
         .no-results img {
             width: 200px;
             margin-bottom: 10px;
         }
-
         .no-results h3 {
             font-size: 26px;
             color: #444;
         }
-
         .no-results p {
             font-size: 18px;
             color: #777;
         }
-
         /* Loading Spinner */
         .loading-spinner {
             display: none;
             text-align: center;
             margin-top: 20px;
         }
-
         .spinner {
             width: 50px;
             height: 50px;
@@ -172,42 +150,35 @@
             animation: spin 1s linear infinite;
             margin: auto;
         }
-
         @keyframes spin {
             100% { transform: rotate(360deg); }
         }
-
         /* Fade Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to   { opacity: 1; transform: translateY(0); }
         }
-
         /* Dark Mode */
         body.dark-mode {
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             color: #e0e0e0;
         }
-
         body.dark-mode h1 {
             background: linear-gradient(45deg, #a3b8ff, #84fab0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         body.dark-mode .search-input {
             background: #333;
             color: #e0e0e0;
             border-color: #555;
             box-shadow: 0 0 10px rgba(163, 184, 255, 0.3);
         }
-
         body.dark-mode .search-input:focus {
             border-color: #a3b8ff;
             box-shadow: 0 0 10px rgba(163, 184, 255, 0.3);
         }
-
         body.dark-mode .movie {
             background: #333;
             color: #e0e0e0;
@@ -215,23 +186,18 @@
                 linear-gradient(#333, #333),
                 linear-gradient(45deg, #ff6ec4, #fda085, #84fab0, #8fd3f4, #ffecd2);
         }
-
         body.dark-mode .movie h2 {
             color: #e0e0e0;
         }
-
         body.dark-mode .no-results h3 {
             color: #ccc;
         }
-
         body.dark-mode .no-results p {
             color: #aaa;
         }
-
         .dark-mode-btn {
             background: linear-gradient(45deg, #333, #555) !important;
         }
-
         body.dark-mode .dark-mode-btn {
             background: linear-gradient(45deg, #5a7bff, #84fab0) !important;
         }
